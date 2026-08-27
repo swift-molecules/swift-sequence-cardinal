@@ -1,5 +1,5 @@
 public import Cardinal
-public import Cardinal_Standard_Library_Integration
+public import Iterator
 public import Sequence
 public import Sequence_Property
 
@@ -10,7 +10,7 @@ extension Sequenceable where Self: ~Copyable, Element: Copyable & Escapable {
         let hint = self.hint.count
         var iterator = self.makeIterator()
         var result: [Element] = []
-        result.reserveCapacity(hint)
+        result.reserveCapacity(Int(clamping: hint.rawValue))
         while let element = try iterator.next() {
             result.append(element)
         }

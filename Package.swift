@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-sequence.git",
+            url: "https://github.com/swift-atoms/swift-sequence.git",
             branch: "main"
         ),
         .package(
@@ -46,11 +46,8 @@ let package = Package(
                 .product(name: "Sequence", package: "swift-sequence"),
                 .product(name: "Sequence Property", package: "swift-sequence-property"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
-                .product(
-                    name: "Cardinal Standard Library Integration",
-                    package: "swift-cardinal"
-                ),
                 .product(name: "Ordinal", package: "swift-ordinal"),
+                .product(name: "Iterator", package: "swift-iterator"),
             ]
         ),
         .testTarget(
@@ -59,7 +56,7 @@ let package = Package(
                 "Sequence Cardinal",
                 .product(name: "Sequence", package: "swift-sequence"),
                 .product(name: "Sequence Property", package: "swift-sequence-property"),
-                .product(name: "Iterator Protocol", package: "swift-iterator"),
+                .product(name: "Iterator", package: "swift-iterator"),
             ]
         ),
     ],

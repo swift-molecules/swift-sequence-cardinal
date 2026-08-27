@@ -3,14 +3,10 @@ import Sequence_Cardinal
 import Sequence_Property
 import Testing
 
-@Suite
-struct `Sequence.Protocol.Collect Test` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-}
+@Suite("Sequenceable.collect × Cardinal")
+struct Sequenceable_Collect_Cardinal_Tests {}
 
-extension `Sequence.Protocol.Collect Test`.Unit {
+extension Sequenceable_Collect_Cardinal_Tests {
     @Test
     func `collect materializes sequence into array`() {
         let source = Sequence.Fixture.Source([1, 2, 3, 4, 5])
@@ -26,7 +22,7 @@ extension `Sequence.Protocol.Collect Test`.Unit {
     }
 }
 
-extension `Sequence.Protocol.Collect Test`.`Edge Case` {
+extension Sequenceable_Collect_Cardinal_Tests {
     @Test
     func `collect on empty sequence returns empty array`() {
         let source = Sequence.Fixture.Source<Int>([])
